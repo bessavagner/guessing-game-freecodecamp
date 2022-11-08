@@ -49,7 +49,7 @@ GAME() {
 		elif [[ $SECRET_NUMBER = $GUESS ]]
 		then
 			GUESSES=$(($GUESSES + 1))
-			echo -e "\nYou guessed it in $GUESSES guesses. The secret number was $SECRET_NUMBER. Nice job!"
+			echo -e "\nYou guessed it in $GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
 			#insert into db
 			INSERT_GAME_RESULT=$($PSQL "insert into games(user_id, guesses) values($USER_ID, $GUESSES)")
 		# if greater
@@ -63,6 +63,7 @@ GAME() {
       		echo -e "\nIt's lower than that, guess again:"
 		fi
 	done
+	echo -e "\nThanks for playing!"
 }
 
 MAIN
