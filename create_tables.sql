@@ -1,6 +1,6 @@
 CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
-    name VARCHAR(30) NOT NULL
+    name VARCHAR(22) NOT NULL
 );
 
 CREATE TABLE games(
